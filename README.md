@@ -2,7 +2,7 @@
 
 ![awx](img/awx.png)
 
-I'm a huge fan of Ansible and have been writing playbooks and roles for the past year.  Typically I run these locally from a laptop but in 2018 would like to do things a little more "enterprisey" ?  AWX is a really nice OpenSource frontend for ansible based on Ansible Tower.  Since we rely on ansible for rolling out new environments we would like AWX to be HA.  Docker Swarm is a nice fit for keeping our AWX stack running and healthy.  
+I'm a huge fan of Ansible and have been writing playbooks and roles for the past year.  Typically I run these locally from a laptop but in 2018 would like to do things a little more "enterprisey".  AWX is a really nice OpenSource frontend for ansible based on Ansible Tower.  Since we rely on ansible for rolling out new environments we would like AWX to be HA.  Docker Swarm is a nice fit for keeping our AWX stack running and healthy.  
 
 The stack has been split into 2 parts :
 
@@ -234,3 +234,9 @@ docker volume rm awx_postgres
 awx_postgres
 
 ```
+# Summary
+
+This still needs a bit more work but rolling out an AWX stack using "docker stack deploy" to Swarm is fairly straight forward.  From Q1 2018 you will be able to use these same .yml files to deploy to Kubernetes.
+
+Twitter : @tomwillfixit
+#DockerCaptain
