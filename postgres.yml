@@ -1,0 +1,17 @@
+version: "3.4"
+
+services:
+  postgres:
+    image: postgres:9.6
+    volumes:
+      - postgres:/var/lib/postgresql/data
+    env_file:
+      - postgres.env
+    networks:
+      - network 
+
+networks:
+  network:
+
+volumes:
+  postgres:
