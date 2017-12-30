@@ -103,6 +103,8 @@ make: *** [remove] Error 1
 
 The service has been removed but there is still a handle open to the data volume so it can't be removed. You can run docker rm -f e3e26d6e331c and then make cleanup again.
 
+It's also worth keeping an eye on this : https://github.com/ansible/awx/issues/74 Some work being done to make awx more orchestrator friendly.
+
 ## Appendix
 
 ### 1
