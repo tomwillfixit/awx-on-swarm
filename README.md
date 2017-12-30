@@ -2,7 +2,7 @@
 
 ![awx](img/awx.png)
 
-I'm a huge fan of Ansible and have been writing playbooks and roles for the past year.  Typically I run these locally from a laptop but in 2018 would like to do things a little more "enterprisy"?  AWX is a really nice OpenSource frontend for ansible.  Since we rely on ansible for rolling out new environments we would need AWX to be HA.  Docker Swarm is a nice fit for keeping our AWX stack running and healthy.  
+I'm a huge fan of Ansible and have been writing playbooks and roles for the past year.  Typically I run these locally from a laptop but in 2018 would like to do things a little more "enterprisey" ?  AWX is a really nice OpenSource frontend for ansible based on Ansible Tower.  Since we rely on ansible for rolling out new environments we would like AWX to be HA.  Docker Swarm is a nice fit for keeping our AWX stack running and healthy.  
 
 The stack has been split into 2 parts :
 
@@ -89,10 +89,11 @@ At this point you can follow the official awx documentation to setup inventories
 ```
 docker stack rm awx
 docker volume rm awx_postgres
-
+```
 ## Caveats
 
 I had some issues connecting between the awx container and the rabbitmq container as the guest user.  To work around this I created a test user and updated the connection.py script which is bundled with ansible/awx_task image.  There is also a 500 internal server error when running the scm scheduled check. Debugging at the moment. When running cleanup you may occasionally see this error :
+
 ```
 Error response from daemon: unable to remove volume: remove awx_postgres: volume is in use - [e3e26d6e331cf5eaad9e3db53b6d3ff28aaac0494c58e3ce92d3a5ea9a16f190]
 makefile:17: recipe for target 'remove' failed
