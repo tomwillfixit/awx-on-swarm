@@ -18,6 +18,7 @@ services:
 
   awx:
     image: ansible/awx_task:latest
+    hostname: awx
     user: root
     env_file:
       - awx.env
